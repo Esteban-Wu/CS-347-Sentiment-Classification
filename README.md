@@ -1,1 +1,1 @@
-# esteban-wu.github.io
+# CS 347 Final Project
