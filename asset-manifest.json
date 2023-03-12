@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/esteban-wu.github.io/static/css/main.0d5c935c.css",
-    "main.js": "/esteban-wu.github.io/static/js/main.61ecbc58.js",
-    "static/js/787.28cb0dcd.chunk.js": "/esteban-wu.github.io/static/js/787.28cb0dcd.chunk.js",
-    "static/media/public-sans-all-400-normal.woff": "/esteban-wu.github.io/static/media/public-sans-all-400-normal.74e7e7d8ab558dd108a1.woff",
-    "static/media/public-sans-latin-400-normal.woff2": "/esteban-wu.github.io/static/media/public-sans-latin-400-normal.4758638f2eeeaf0dd6c4.woff2",
-    "static/media/public-sans-latin-ext-400-normal.woff2": "/esteban-wu.github.io/static/media/public-sans-latin-ext-400-normal.cbd34e580c9965bfc3c9.woff2",
-    "static/media/public-sans-vietnamese-400-normal.woff2": "/esteban-wu.github.io/static/media/public-sans-vietnamese-400-normal.4490eed5a77c4164de3d.woff2",
-    "index.html": "/esteban-wu.github.io/index.html",
-    "main.0d5c935c.css.map": "/esteban-wu.github.io/static/css/main.0d5c935c.css.map",
-    "main.61ecbc58.js.map": "/esteban-wu.github.io/static/js/main.61ecbc58.js.map",
-    "787.28cb0dcd.chunk.js.map": "/esteban-wu.github.io/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/cs-347-final-project/static/css/main.130d06f8.css",
+    "main.js": "/cs-347-final-project/static/js/main.ed03a078.js",
+    "static/js/787.28cb0dcd.chunk.js": "/cs-347-final-project/static/js/787.28cb0dcd.chunk.js",
+    "static/media/public-sans-all-400-normal.woff": "/cs-347-final-project/static/media/public-sans-all-400-normal.74e7e7d8ab558dd108a1.woff",
+    "static/media/public-sans-latin-400-normal.woff2": "/cs-347-final-project/static/media/public-sans-latin-400-normal.4758638f2eeeaf0dd6c4.woff2",
+    "static/media/public-sans-latin-ext-400-normal.woff2": "/cs-347-final-project/static/media/public-sans-latin-ext-400-normal.cbd34e580c9965bfc3c9.woff2",
+    "static/media/public-sans-vietnamese-400-normal.woff2": "/cs-347-final-project/static/media/public-sans-vietnamese-400-normal.4490eed5a77c4164de3d.woff2",
+    "index.html": "/cs-347-final-project/index.html",
+    "main.130d06f8.css.map": "/cs-347-final-project/static/css/main.130d06f8.css.map",
+    "main.ed03a078.js.map": "/cs-347-final-project/static/js/main.ed03a078.js.map",
+    "787.28cb0dcd.chunk.js.map": "/cs-347-final-project/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d5c935c.css",
-    "static/js/main.61ecbc58.js"
+    "static/css/main.130d06f8.css",
+    "static/js/main.ed03a078.js"
   ]
 }
