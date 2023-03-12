@@ -18,7 +18,7 @@ function App() {
     disgust: String.fromCodePoint(0x1F922),
   };
 
-  const apiKey = "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"; // replace with your actual API key
+  const apiKey = "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"; // replace with your actual API key
   const apiUrl = "https://api.openai.com/v1/completions";
 
   const handleGenerateText = async () => {
