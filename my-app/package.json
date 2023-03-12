@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://esteban-wu.github.io/esteban-wu.github.io",
+  "homepage": "https://esteban-wu.github.io/cs-347-final-project",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
