@@ -1,24 +1,29 @@
 import React, { useState } from "react";
+import Textarea from '@mui/joy/Textarea';
+import Button from '@mui/joy/Button';
+import Box from '@mui/joy/Box';
+import Typography from '@mui/joy/Typography';
+import '@fontsource/public-sans';
 
 function App() {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
   const [emoji, setEmoji] = useState("");
   const EMOJI_MAP = {
-    Happiness: String.fromCodePoint(0x1F60A),
-    Sadness: String.fromCodePoint(0x1F625),
-    Fear: String.fromCodePoint(0x1F628),
-    Anger: String.fromCodePoint(0x1F621),
-    Surprise: String.fromCodePoint(0x1F62E),
-    Disgust: String.fromCodePoint(0x1F922),
+    happiness: String.fromCodePoint(0x1F60A),
+    sadness: String.fromCodePoint(0x1F625),
+    fear: String.fromCodePoint(0x1F628),
+    anger: String.fromCodePoint(0x1F621),
+    surprise: String.fromCodePoint(0x1F62E),
+    disgust: String.fromCodePoint(0x1F922),
   };
 
-  const apiKey = ""; // replace with your actual API key
+  const apiKey = "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"; // replace with your actual API key
   const apiUrl = "https://api.openai.com/v1/completions";
 
   const handleGenerateText = async () => {
     const prompt = `Please categorize the following message into one of these emotions:\n"
-      Happiness, Sadness, Fear, Anger, Surprise, and Disgust.\n
+      happiness, sadness, fear, anger, surprise, and disgust.\n
       Your answer should be 1 word.
       Here is the message: ${inputText}`;
 
@@ -38,26 +43,41 @@ function App() {
 
     const data = await response.json();
     console.log(data.choices);
-    const output = data.choices[0].text.trim()
-    setOutputText(output);
-    setEmoji(EMOJI_MAP[output]);
+    const output = data.choices[0].text.trim().toLowerCase();
+    setOutputText(`We think the sender is feeling ${output}`);
+    setEmoji(`: ${EMOJI_MAP[output]}`);
   };
 
   return (
-    <div>
-      <div>
-        <textarea
+    <Box
+      sx={{
+        py: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}
+    >
+      <Typography level="h1">CS 347 Project: Sentiment Prediction</Typography>
+      <Typography level="h2">{`${outputText}${emoji}`}</Typography>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          handleGenerateText();
+        }}
+      >
+        <Textarea
+          placeholder="Paste your message here"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
+          required
+          size="lg"
+          sx={{ mb: 2 }}
         />
-      </div>
-      <div>
-        <button onClick={handleGenerateText}>Generate Text</button>
-      </div>
-      <div>
-        <p>{`${outputText}: ${emoji}`}</p>
-      </div>
-    </div>
+        <Button type="submit">Predict Sentiment</Button>
+      </form>
+    </Box>
   );
 }
 
