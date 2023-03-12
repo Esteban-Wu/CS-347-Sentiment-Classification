@@ -18,14 +18,14 @@ function App() {
     disgust: String.fromCodePoint(0x1F922),
   };
 
-  const apiKey = "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"; // replace with your actual API key
+  const apiKey = ""; // replace with your actual API key
   const apiUrl = "https://api.openai.com/v1/completions";
 
   const handleGenerateText = async () => {
     const prompt = `Please categorize the following message into one of these emotions:\n"
       happiness, sadness, fear, anger, surprise, and disgust.\n
-      Your answer should be 1 word.
-      Here is the message: ${inputText}`;
+      Your answer should be 1 word.\n
+      Here is the message: "${inputText}"`;
 
     const response = await fetch(apiUrl, {
       method: "POST",
@@ -34,7 +34,7 @@ function App() {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "text-davinci-002",
+        model: "text-davinci-003",
         prompt: prompt,
         max_tokens: 128,
         temperature: 0,
@@ -44,8 +44,13 @@ function App() {
     const data = await response.json();
     console.log(data.choices);
     const output = data.choices[0].text.trim().toLowerCase();
-    setOutputText(`We think the sender is feeling ${output}`);
-    setEmoji(`: ${EMOJI_MAP[output]}`);
+    if (output.indexOf(' ') >= 0 || output === "") {
+      setOutputText("Sorry, we're unable to predict the sentiment for this message.");
+      setEmoji(``);
+    } else {
+      setOutputText(`We think the sender is feeling ${output}`);
+      setEmoji(`: ${EMOJI_MAP[output]}`);
+    }
   };
 
   return (
